@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b2b"><title>Dayline · Workforce time</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main id="app" class="shell">
+    <section id="login" class="login-card" aria-labelledby="login-title">
+      <div class="brand-mark">D</div><p class="eyebrow">WORKDAY, IN SYNC</p><h1 id="login-title">Welcome back</h1><p class="muted">Sign in to your team's time and attendance workspace.</p>
+      <form id="login-form"><label>Email address<input name="email" type="email" autocomplete="username" required placeholder="you@company.com"></label><label>Password<input name="password" type="password" autocomplete="current-password" required></label><button class="button primary wide" type="submit">Sign in <span>↗</span></button><p id="login-error" class="message error" role="alert"></p></form>
+      <button id="demo-login" class="text-button hidden" type="button">Use the seeded demo account</button>
+      <p class="footnote">A focused workspace for teams to track time with confidence.</p>
+    </section>
+    <section id="workspace" class="workspace hidden">
+      <aside class="sidebar">
+        <a class="brand" href="#overview"><span class="brand-mark small">D</span><span>dayline<small>WORKFORCE</small></span></a>
+        <p class="nav-heading">WORKSPACE</p><nav aria-label="Main navigation"><button class="nav-link active" data-view="overview"><span>◫</span>Overview</button><button class="nav-link" data-view="timesheets"><span>▤</span>My timesheets</button><button class="nav-link manager-only hidden" data-view="team"><span>◉</span>Team attendance</button><button class="nav-link manager-only hidden" data-view="approvals"><span>✓</span>Approvals <b id="approval-count" class="count"></b></button><button class="nav-link manager-only hidden" data-view="reports"><span>▥</span>Reports</button><button class="nav-link admin-only hidden" data-view="audit"><span>◷</span>Audit history</button><button class="nav-link admin-only hidden" data-view="settings"><span>⚙</span>Settings</button></nav>
+        <div class="sidebar-bottom"><div class="security-note"><span class="shield">✦</span><div><strong>Your time, protected</strong><p>Only you and your authorized team can see these records.</p></div></div><button id="logout" class="nav-link"><span>↪</span>Sign out</button></div>
+      </aside>
+      <section class="main-area">
+        <header class="topbar"><div><span id="org-label" class="org-label">Office</span><span class="crumb"> / </span><span id="page-title">Overview</span></div><div class="top-actions"><span class="live-dot"></span><span id="today-label" class="today-label"></span><button class="avatar" id="profile-avatar" aria-label="Profile">A</button></div></header>
+        <section id="content" class="content" aria-live="polite"></section>
+      </section>
+    </section>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

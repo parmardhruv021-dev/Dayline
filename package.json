@@ -1,0 +1,17 @@
+{
+  "name": "dayline-workforce",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "dev": "NODE_ENV=development node --watch src/server.mjs",
+    "seed": "NODE_ENV=development node scripts/seed.mjs",
+    "migrate": "node scripts/run-migrations.mjs",
+    "provision": "node src/provision.mjs",
+    "test": "node --test"
+  }
+}
